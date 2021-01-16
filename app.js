@@ -19,6 +19,12 @@
 
 // javascript.printLabiraries();
 // 
-const fs =require('fs')
-fs.writeFileSync('text.txt','yo yo')
-fs.appendFileSync('text.txt','haha')
+// const fs =require('fs')
+// fs.writeFileSync('text.txt','yo yo')
+// fs.appendFileSync('text.txt','haha')
+const yourNote=require('./note.js')
+// console.log(yourNote)
+const note=yourNote()
+console.log(note)
+
+
