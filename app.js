@@ -18,10 +18,7 @@
 // };
 
 // javascript.printLabiraries();
-const EvenEmitter = require('events');
-const School = require('./School.js')
-const school = new School();
-school.on( 'bellRing',({period,text})=>{console.log(`we need to run because ${period} ${text}`)})
-
-// raise an eventListener
-school.startPerid();
+// 
+const fs =require('fs')
+fs.writeFileSync('text.txt','yo yo')
+fs.appendFileSync('text.txt','haha')
