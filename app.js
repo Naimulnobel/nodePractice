@@ -22,9 +22,11 @@
 // const fs =require('fs')
 // fs.writeFileSync('text.txt','yo yo')
 // fs.appendFileSync('text.txt','haha')
-const yourNote=require('./note.js')
-// console.log(yourNote)
-const note=yourNote()
-console.log(note)
+// const yourNote=require('./note.js')
+// // console.log(yourNote)
+// const note=yourNote()
+// console.log(note)
+const chalk = require('chalk');
+console.log(chalk.green("Success"))
 
 
