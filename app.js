@@ -18,10 +18,64 @@
 // };
 
 // javascript.printLabiraries();
-const EvenEmitter = require('events');
-const School = require('./School.js')
-const school = new School();
-school.on( 'bellRing',({period,text})=>{console.log(`we need to run because ${period} ${text}`)})
+// 
+// const fs =require('fs')
+// fs.writeFileSync('text.txt','yo yo')
+// fs.appendFileSync('text.txt','haha')
+const note=require('./note.js')
+// // console.log(yourNote)
+// const note=yourNote()
+// console.log(note)
+const chalk = require('chalk');
+const yargs = require('yargs');
 
-// raise an eventListener
-school.startPerid();
+// 
+yargs.command({
+    command:'add',
+    describe:'Adding a note',
+    builder:{
+        title:{
+            describe:'Note Title',
+            demandOption:true,
+            type:'string'
+        },
+        body:{
+            describe:'Note Body',
+            demandOption:true,
+            type:'string'
+        }
+    },
+    handler: function(argv){
+        note.addNote(argv.title, argv.body)
+        
+    }
+
+})
+yargs.command({
+    command:'remove',
+    describe:'Removing a note',
+    handler: function(){
+        console.log('Removing a note')
+    }
+
+})
+yargs.command({
+    command:'read',
+    describe:'Reading a list',
+    builder:{
+        title:{
+            describe:'Note Title',
+            demandOption:true,
+            type:'string'
+        }
+    },
+    handler: function(argv){
+        console.log('Reading a list',argv)
+    }
+
+})
+//console.log(yargs.argv)
+yargs.parse()
+    
+
+
